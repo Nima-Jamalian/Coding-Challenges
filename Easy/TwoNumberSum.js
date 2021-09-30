@@ -32,7 +32,7 @@ Sample Output
 function TwoNumberSum(array,targetSum) {
  var index = 0;
  for(index; index < array.length; index++){
-    for(i = index ;i <array.length-1; i++){
+    for(var i = index ;i <array.length-1; i++){
         if(array[index] + array[i+1] == targetSum){
            return console.log([array[index],array[i+1]]);
         }
