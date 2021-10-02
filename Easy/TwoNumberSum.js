@@ -20,17 +20,30 @@ targetSum = 10
 Sample Output
 [-1,11] //the numbers could be in revers order
 */
+
+//Open this if you could not solve the problem.
+//#region Hints + Optimal Space & Time Complexity
+/*
+Hint 1
+Try using two for loops to sum all possible pairs of numbers in the input array.
+What are the time and space implications of this approach?
+
+Hint 2
+Realize that for every number X in the input array, you are essentially trying to
+find a corresponding number Y such that X + Y = targetSum. With two variables in
+this equation known to you, it shouldn't be hard to solve for Y.
+
+Hint 3
+Try storing every number in a hash table, solving the equation mentioned in Hint
+#2 for every number, and checking if the Y that you find is stored in the hash
+table. What are the time and space implications of this approach?
+
+Optimal Space & Time Complexity
+O(n) time | O(n) space - where n is the length of the input array
+*/
+//#endregion
 //---------------------------------------------
 //Solution
-//Pseudocode
-//index[0] + index[1] = result
-    //if result = targetSum
-        //return [index[0],[1]]
-    //Else
-        //index[0] + index[2]
-        //...
-
-//Code
 function TwoNumberSum(array,targetSum) {
  var index = 0;
  for(index; index < array.length; index++){

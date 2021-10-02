@@ -44,9 +44,6 @@ O(n) time | O(n) space - where n is the length of the input array
 //#endregion
 //---------------------------------------------
 //Solution
-//Pseudocode
-
-
 function sortedSquaredArray(array){
     const squaredArray = [];
     var hasNegetive = false;
