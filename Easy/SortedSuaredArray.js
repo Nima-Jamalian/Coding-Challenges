@@ -41,6 +41,28 @@ Optimal Space & Time Complexity
 O(n) time | O(n) space - where n is the length of the input array
 */
 //-----------------------------------------------------------------------------------------------
+//Solution
+function sortedSquaredArray(array){
+  const squaredArray = [];
+  var hasNegetive = false;
+  array.forEach(element => {
+      if(element < 0){
+          hasNegetive = true;
+          console.log("has negetive");
+      }
+      squaredArray.push(element*element);
+  });
+  if(hasNegetive == false){
+     
+      return  squaredArray;
+  } else {
+      squaredArray.sort(function(a, b){return a-b});
+      return squaredArray;
+  }
+}
+var array = [-10,1, 2, 3, 5, 6, 8 ,9]
+console.log(sortedSquaredArray(array));
+//-----------------------------------------------------------------------------------------------
 //You can use these test cases to validate your solution
 //Better to check this after you have attempted the challenge and confident in your answer
 /* Test cases
@@ -287,25 +309,3 @@ Input(s)
   "array": [-3, -2, -1]
 }
 */
-//-----------------------------------------------------------------------------------------------
-//Solution
-function sortedSquaredArray(array){
-    const squaredArray = [];
-    var hasNegetive = false;
-    array.forEach(element => {
-        if(element < 0){
-            hasNegetive = true;
-            console.log("has negetive");
-        }
-        squaredArray.push(element*element);
-    });
-    if(hasNegetive == false){
-       
-        return  squaredArray;
-    } else {
-        squaredArray.sort(function(a, b){return a-b});
-        return squaredArray;
-    }
-}
-var array = [-10,1, 2, 3, 5, 6, 8 ,9]
-console.log(sortedSquaredArray(array));

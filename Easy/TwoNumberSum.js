@@ -41,6 +41,21 @@ Optimal Space & Time Complexity
 O(n) time | O(n) space - where n is the length of the input array
 */
 //-----------------------------------------------------------------------------------------------
+//Solution
+function TwoNumberSum(array,targetSum) {
+  var index = 0;
+  for(index; index < array.length; index++){
+     for(var i = index ;i <array.length-1; i++){
+         if(array[index] + array[i+1] == targetSum){
+            return console.log([array[index],array[i+1]]);
+         }
+     }
+  }
+  return console.log([]);
+ }
+ 
+ TwoNumberSum([3, 5, -4, 8, 11, 1, -1, 6],15);
+//-----------------------------------------------------------------------------------------------
 //You can use these test cases to validate your solution
 //Better to check this after you have attempted the challenge and confident in your answer
 /* Test cases
@@ -241,18 +256,3 @@ Input(s)
   "targetSum": 15
 }
 */
-//-----------------------------------------------------------------------------------------------
-//Solution
-function TwoNumberSum(array,targetSum) {
-  var index = 0;
-  for(index; index < array.length; index++){
-     for(var i = index ;i <array.length-1; i++){
-         if(array[index] + array[i+1] == targetSum){
-            return console.log([array[index],array[i+1]]);
-         }
-     }
-  }
-  return console.log([]);
- }
- 
- TwoNumberSum([3, 5, -4, 8, 11, 1, -1, 6],15);

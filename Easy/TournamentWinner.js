@@ -68,6 +68,40 @@ Optimal Space & Time Complexity
 O(n) time | O(k) space - where n is the number of competitions and k is the number of teams
 */
 //-----------------------------------------------------------------------------------------------
+//Solution
+function tournamentWinner(competitions, results) {
+  var resultTable = new Map();
+  for (let i = 0; i < results.length; i++) {
+      if (results[i] == 0) {
+          if (resultTable.get(competitions[i][1]) != undefined) {
+              resultTable.set(competitions[i][1], (resultTable.get(competitions[i][1])) + 1);
+          } else {
+              resultTable.set(competitions[i][1], 1);
+          }
+      } else {
+          if (resultTable.get(competitions[i][0]) != undefined) {
+              resultTable.set(competitions[i][0], (resultTable.get(competitions[i][0])) + 1);
+          } else {
+              resultTable.set(competitions[i][0], 1);
+          }
+      }
+
+  }
+  var resultSorted = new Map([...resultTable.entries()].sort((a, b) => b[1] - a[1]));
+  const iterator = resultSorted.keys();
+  return iterator.next().value;
+}
+
+var competitions = [
+  ["HTML", "C#"],
+  ["C#", "Python"],
+  ["Python", "HTML"],
+];
+
+var results = [0, 0, 1];
+
+console.log(tournamentWinner(competitions, results));
+//-----------------------------------------------------------------------------------------------
 //You can use these test cases to validate your solution
 //Better to check this after you have attempted the challenge and confident in your answer
 /* Test cases
@@ -360,37 +394,3 @@ Input(s)
   "results": [0]
 }
 */
-//-----------------------------------------------------------------------------------------------
-//Solution
-function tournamentWinner(competitions, results) {
-  var resultTable = new Map();
-  for (let i = 0; i < results.length; i++) {
-      if (results[i] == 0) {
-          if (resultTable.get(competitions[i][1]) != undefined) {
-              resultTable.set(competitions[i][1], (resultTable.get(competitions[i][1])) + 1);
-          } else {
-              resultTable.set(competitions[i][1], 1);
-          }
-      } else {
-          if (resultTable.get(competitions[i][0]) != undefined) {
-              resultTable.set(competitions[i][0], (resultTable.get(competitions[i][0])) + 1);
-          } else {
-              resultTable.set(competitions[i][0], 1);
-          }
-      }
-
-  }
-  var resultSorted = new Map([...resultTable.entries()].sort((a, b) => b[1] - a[1]));
-  const iterator = resultSorted.keys();
-  return iterator.next().value;
-}
-
-var competitions = [
-  ["HTML", "C#"],
-  ["C#", "Python"],
-  ["Python", "HTML"],
-];
-
-var results = [0, 0, 1];
-
-console.log(tournamentWinner(competitions, results));

@@ -42,7 +42,24 @@ sequence.
 Optimal Space & Time Complexity
 O(n) time | O(1) space - where n is the length of the array
 */
-
+//-----------------------------------------------------------------------------------------------
+//Solution
+function isValidSubsequence(array,sequence){
+  var index = 0;
+  for(let i=0; i<array.length;i++){
+      if(sequence[index]==array[i]){
+          index++;
+      }
+  }
+  if(sequence.length == index){
+      console.log(true);
+  } else {
+      console.log(false);
+  }
+}
+var array = [5,1,22,25,6,-1,8,10];
+var sequence = [1,6,-1,10];
+isValidSubsequence(array,sequence);
 //-----------------------------------------------------------------------------------------------
 //You can use these test cases to validate your solution
 //Better to check this after you have attempted the challenge and confident in your answer
@@ -420,21 +437,3 @@ Input(s)
   "sequence": [5, 1, 22, 25, 6, -1, 8, 10, 10]
 }
 */
-//-----------------------------------------------------------------------------------------------
-//Solution
-function isValidSubsequence(array,sequence){
-  var index = 0;
-  for(let i=0; i<array.length;i++){
-      if(sequence[index]==array[i]){
-          index++;
-      }
-  }
-  if(sequence.length == index){
-      console.log(true);
-  } else {
-      console.log(false);
-  }
-}
-var array = [5,1,22,25,6,-1,8,10];
-var sequence = [1,6,-1,10];
-isValidSubsequence(array,sequence);
