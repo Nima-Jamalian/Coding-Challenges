@@ -14,7 +14,14 @@ Question name
 //-----------------------------------------------------------------------------------------------
 //Solution
 
+//-----------------------------------------------------------------------------------------------
+/*
+//Other Solution
 
+//---
+
+//---
+*/
 //-----------------------------------------------------------------------------------------------
 //You can use these test cases to validate your solution
 //Better to check this after you have attempted the challenge and confident in your answer
