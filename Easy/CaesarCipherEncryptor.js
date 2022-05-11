@@ -37,10 +37,13 @@ O(n) time | O(n) space - where n is the length of the input string
 function caesarCipherEncryptor(string, key) {
 	let output = "";
 	for(let char of string){
+		//26 -> Number english aphabet characters
 		let newCode = char.charCodeAt() + key % 26;
 		if(newCode <= 122){
 				output += String.fromCharCode(newCode);
 		} else {
+			//97 -> a UniCode
+			//122 -> z UniCode
 			output += String.fromCharCode(96 + (newCode%122));
 		}
 	}
